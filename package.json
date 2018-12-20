@@ -1,5 +1,5 @@
 {
-  "name": "PJSIPtest",
+  "name": "pjsip-test",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.57.8",
-    "react-native-pjsip": "^2.7.4"
+    "react-native-pjsip": "https://github.com/datso/react-native-pjsip"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

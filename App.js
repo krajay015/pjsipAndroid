@@ -24,9 +24,7 @@ export default class App extends Component<Props> {
     console.log('SIP STARTED');
     const endpoint = new Endpoint();
     const state = await endpoint.start({
-          service: {
-            ua: 'RN SIP',
-          },
+          ua: Platform.select({ios: "RnSIP iOS", android: "RnSIP Android"}),
           network: {
             useWifi: true,
             useOtherNetworks: true,
