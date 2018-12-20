@@ -8,6 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Endpoint} from "react-native-pjsip";
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,6 +20,20 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  async componentDidMount(){
+    console.log('SIP STARTED');
+    const endpoint = new Endpoint();
+    const state = await endpoint.start({
+          service: {
+            ua: 'RN SIP',
+          },
+          network: {
+            useWifi: true,
+            useOtherNetworks: true,
+          },
+        });
+    console.log({state});
+  }
   render() {
     return (
       <View style={styles.container}>
